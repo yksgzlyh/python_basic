@@ -1,0 +1,42 @@
+1.类（class）和对象（object）
+	①创建类时，应以大写字母开头，主要是为了区分函数
+	②一个类（Class）能够创建一种新的类型Type），
+	其中对象（Object）就是类的实例（Instance）。
+	可以这样来类比：
+	你可以拥有类型 int 的变量，也就是说存储整数的变量是 int 类的实例（对象）。
+	③当类中的函数需要传入参数时，需要在 __init__(self,paream1,paream2,...)声明
+	否则类中的有参函数将会出错
+	
+例子：
+	class Employee:
+   '所有员工的基类'
+   empCount = 0 #静态变量称为属性
+ 
+   def __init__(self, name, salary): 
+   #在 __init__中定义两个参数name和salary，因为在后面的两个函数要用
+      self.name = name
+      self.salary = salary
+      Employee.empCount += 1
+   
+   def displayCount(self):
+     print ("Total Employee %d" % Employee.empCount)
+ 
+   def displayEmployee(self):
+      print ("Name : ", self.name,  ", Salary: ", self.salary)
+2.self；self指代是类的实例化本身
+例子：
+class Dog:
+	a=0
+	b=0
+	__c=1
+	def __init__(self, name):
+        self.name = name
+		
+self指代的就是Dog类的实例化
+
+3.类的私有变量
+	__a
+	以双下划綫开头的变量就是私有变量
+	以上面的Dog中创建一个实例：
+	dog=Dog()
+	dog.__c则不能访问，因为它是私有变量，所以无法访问
