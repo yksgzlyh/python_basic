@@ -1,0 +1,29 @@
+
+/*********************/
+该脚本执行的前提是将winRAR复制到python的安装路径下
+/*********************/
+1.os.seq
+首先，Python是跨平台的。
+在 Windows 上，文件的路径分割符号是 '\' ，在 Linux 上 是 ‘/’。
+为了让你的代码在不同的平台上都能运行，那么你写路径的时候是写 ‘/’ 还是写 '\' 呢？
+使用 os.sep 的话，你就不用去考虑这个了，os.sep 根据你所处的平台，自动地采用相应的分割符号。
+举例：
+Linux下一个路径,  /usr/share/python，那么上面的 os.sep 就是 ‘/’
+Windows下一个路径, C:\Users\Public\Desktop, 那么上面的 os.sep 就是 '\'。
+
+①如果os.sep放在首位则默认为：c:\
+②如果C:\\Users\\Administrator\\Desktop\\python\\笔记+os.sep
+
+ 则：C:\Users\Administrator\Desktop\python\笔记
+
+2.压缩命令
+ http://www.jb51.net/softjc/55584.html
+ 
+3.‘a’.join(b)
+   以a作为分隔符，将b所有的元素合并成一个新的字符串
+ 
+4.time.strftime() 
+函数会遵循某些格式（Specification），其中一种就如我们在上方程序中所
+使用的那样。 %Y 将被替换成带有具体世纪的年份。 %m 将会被替换成以 01 至 12 的十进
+制数所表示的月份。有关这些格式的全部列表可以在 Python 参考手册中查询到。
+ 
