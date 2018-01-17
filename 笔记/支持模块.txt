@@ -1,4 +1,0 @@
-非官方的python扩展包：
-https://www.lfd.uci.edu/~gohlke/pythonlibs/
-import pip
-print(pip.pep425tags.get_supported())
