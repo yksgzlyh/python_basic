@@ -1,0 +1,33 @@
+1.基础的匹配语法
+    line='!abc pp123qpwez-=?'
+#点（.）的用法
+print(re.sub('.','',line))#将字符串line的所有字符变为空
+print(re.sub('1.','',line))#将数字1及数字1后面的一个字节变为空
+print(re.sub('1..','',line))#将数字1及数字1后面的两个字节变为空
+#[]的用法
+print(re.sub('[a-z]','',line))#将a-z的字母替换为空
+print(re.sub('[az]','',line))#字母a和z分别替换为空
+#（\d）数字[0-9]
+print(re.sub('\d','',line))#将数字替换为空
+#（\D）非数字
+print(re.sub('\D','',line))#将数字替换为空
+#(\s)空白字符
+print(re.sub('\s','',line))#将空格替换为空
+#(\S)非空白字符
+print(re.sub('\S','',line))#将非空格替换为空
+#（\w）单词字符[a-zA-Z1-9]
+print(re.sub('\w','',line))#将单词字符替换为空
+#(\W)非单词字符
+print(re.sub('\W','',line))#将非单词字符替换为空
+#(*)匹配前一个字符
+print(re.sub('p.*','',line))#默认从末尾开始开始匹配，到字母p之前的字符串变为空
+print(re.sub('p.*$','',line))#从末尾开始开始匹配，到字母p之前的字符串变为空
+
+2.flag匹配模式选择
+    re.I:忽略大小写（IGNORECASE）
+    re.M:多行模式，改变‘^’和‘$’的行为(MULTILINE)
+    re.S:点任意匹配模式，改变‘.’的行为（DOTALL）
+
+3.re.match()与re.search()的区别：
+    re.match只匹配字符串的开始，如果字符串的开始不符合正则表达式，则匹配失败
+    re.search匹配整个字符串，直到找到一个匹配
